@@ -1,6 +1,6 @@
-# _Pizza Delivery_
+# _Pizza Shop_
 
-http://maxdhs.github.io/pizza-delivery
+http://maxdhs.github.io/pizza-shop
 
 #### A webpage for a simple pizza delivery form.
 
