@@ -20,7 +20,13 @@ Pizza.prototype.cost = function() {
 $(document).ready(function () {
   
   $("button").click(function() {
+    var inputAddress = $("#inputAddress").val();
     var inputToppings = [];
+    if (inputAddress == "") {
+      alert("Please enter your address");
+      document.reload();
+    }
+    
     $(".chk:checked").each(function() {
       inputToppings.push($(this).val());
     });
@@ -28,10 +34,17 @@ $(document).ready(function () {
     var inputSize = $("#inputSize").val();
     
     var newPizza = new Pizza (inputToppings, inputSize);
-    alert(newPizza.cost());
+    
+    var inputName = $("#inputName").val();
+    
+    var inputPhoneNumber = $("#inputPhoneNumber").val();
+    
+    
+    $("#output").text("The total for your order is: " + newPizza.cost() + "$. Your delivery is guaranteed to " + inputAddress + " in 20 minutes or less.");
+    
   });
 
-
+  
 
   
   
