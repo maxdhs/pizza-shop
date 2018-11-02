@@ -24,7 +24,11 @@ $(document).ready(function () {
     $(".chk:checked").each(function() {
       inputToppings.push($(this).val());
     });
-    alert(inputToppings);
+    
+    var inputSize = $("#inputSize").val();
+    
+    var newPizza = new Pizza (inputToppings, inputSize);
+    alert(newPizza.cost());
   });
 
 

@@ -7,8 +7,21 @@
 </head>
 <body>
   
+    <p>
+      name: <input type="text" id="inputName">
+      <br/>
+      address:<input type="text" id="inputAddress">
+      <br/>
+      phone number:<input id="inputPhoneNumber">
+    </p>
+
   <p>Please choose your size:</p>
   
+  <select class="form-control" id="inputSize">
+    <option>small</option>
+    <option>medium</option>
+    <option>large</option>
+  </select>
   
   
   <p>Please choose your toppings (check all you would like):</p>
@@ -20,6 +33,8 @@
   <input type="checkbox" value="green peppers" class="chk"> green peppers
 
   <button>Order</button> 
+  
+  <p id="output"></p>
 
 <script type="text/javascript" src="js/script.js"></script>
 </body>
