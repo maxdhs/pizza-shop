@@ -48,7 +48,13 @@ select {
   font-size: 25px;
 }
 
+#deliveryDisplay {
+  display: none;
+}
 
+#pickUpDisplay {
+  display: none;
+}
 
 
 

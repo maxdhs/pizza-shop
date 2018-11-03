@@ -17,12 +17,26 @@ Pizza.prototype.cost = function() {
   return cost;
 };
 
+var pickUpOrDelivery = "";
+
 $(document).ready(function () {
+
+  $("input[name='pickUpOrDelivery']").change(function(){
+    pickUpOrDelivery = $("input[name='pickUpOrDelivery']:checked").val();
+    if (pickUpOrDelivery == "pick-up") {
+      $("#pickUpDisplay").slideDown();
+      $("#deliveryDisplay").hide();
+    }
+    else {
+      $("#deliveryDisplay").slideDown();
+      $("#pickUpDisplay").hide();
+    }
+  });
   
   $("button").click(function() {
     var inputAddress = $("#inputAddress").val();
     var inputToppings = [];
-    if (inputAddress == "") {
+    if (inputAddress == "" && pickUpOrDelivery == "delivery") {
       alert("Please enter your address");
       document.reload();
     }
@@ -30,6 +44,8 @@ $(document).ready(function () {
     $(".chk:checked").each(function() {
       inputToppings.push($(this).val());
     });
+
+  
     
     var inputSize = $("#inputSize").val();
     
@@ -38,10 +54,18 @@ $(document).ready(function () {
     var inputName = $("#inputName").val();
     
     var inputPhoneNumber = $("#inputPhoneNumber").val();
-    
-    
-    $("#output").text("The total for your order is: " + newPizza.cost() + "$. Your delivery is guaranteed to " + inputAddress + " in 20 minutes or less.");
-    
+
+    if (pickUpOrDelivery == "") {
+      alert("Please choose pick-up or delivery");
+      document.reload();
+    }
+
+    if (pickUpOrDelivery == "delivery") {
+      $("#output").text("The total for your order is: $" + newPizza.cost() + ". Your delivery is guaranteed to " + inputAddress + " in 20 minutes or less.");
+    }
+    else {
+      $("#output").text("The total for your order is: " + newPizza.cost() + "$. We will have your order ready in our store for pick-up in 20 minutes.");
+    }
   });
 
   
