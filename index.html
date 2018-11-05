@@ -11,7 +11,7 @@
   <p>Would you like delivery or pick-up?</p>
 
   
-  <input type="radio" name="pickUpOrDelivery" value="pick-up"> pick-up
+  <input type="radio" name="pickUpOrDelivery" value="pick-up" checked> pick-up
   <input type="radio" name="pickUpOrDelivery" value="delivery"> delivery
 
   <br>
@@ -48,8 +48,16 @@
   
   <br/>
 
-  <button class="button">Place Your Order</button> 
+  <button id="addOrder" class="button">Add your pie to the order! (click for additional pies)</button> 
  
+
+
+  <p id="orderOutput"></p>
+
+  <p id="orderTotal"></p>
+
+  <button class ="button" id="confirmOrder">Confirm Order</button>
+
   <p id="output"></p>
  
 <script type="text/javascript" src="js/script.js"></script>
